@@ -201,7 +201,7 @@ function pageCreation() {
 
 let teamOne,teamTwo,teamOneScore=0,teamTwoScore=0,matchLimit,deuce=false,currentSport,time,timer,notPaused=true,i=2,j=3,k=4;
 let halfOrQuarter=1;
-let icons=['./images/Image0.jpg','./images/Image1.jpg','./images/Image2.jpg','./images/Image3.jpg','./images/Image4.jpg','./images/Image5.jpg'];
+let icons=['Image0.jpg','Image1.jpg','Image2.jpg','Image3.jpg','Image4.jpg','Image5.jpg'];
 let isTimerRunning = false;
 document.addEventListener("DOMContentLoaded",()=>{
     currentSport = localStorage.getItem('currentSport')
