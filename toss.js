@@ -8,7 +8,7 @@ let teamOneBat=0;
 let teamTwoBat=0;
 let teamOne = localStorage.getItem('teamOne');
 let teamTwo = localStorage.getItem('teamTwo');
-let icons=['./images/image0.jpg','./images/image1.jpg','./images/image2.jpg','./images/image3.jpg','./images/image4.jpg','./images/image5.jpg'];
+let icons=['image0.jpg','image1.jpg','image2.jpg','image3.jpg','image4.jpg','image5.jpg'];
 let currentSport;
 document.addEventListener('DOMContentLoaded',()=>{
     // let next = document.getElementById('next');
