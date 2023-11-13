@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <link rel="stylesheet" href="./styles/cricket.css">
+    <script type="module" src="./scripts/cricket.js"></script>
+    <title>ScoreBoard</title>
+  <!-- <link rel="shortcut icon" href="./images/icon-192x192.png" /> -->
+  <link rel="shortcut icon" href="./images/sportScore.webp" />
+
+
+</head>
+<body>
+    <div class="header">
+        <div class="field">
+
+            <div class="head"><img class="bat" src="./images/bat.png" alt="" srcset="" id="bat">
+                <h1>Sport-<div> <img class="ball" src="./images/cricket-ball (2).png" alt="O"></div>-Score</h1>
+            </div>
+        </div>
+    </div>
+    <div class="inner">
+        <div>
+            <!-- Icon Team1  -->
+            <div class="leftimage" >
+                <img src="" alt="Team1Icon" id="leftImage">
+            </div>
+            <!-- team One Name -->
+            <div class="information">
+                <h1 id="h11"></h1>
+            </div>
+            <!-- BAtting/Bowling Status -->
+            <div class="batOrField">
+                <h2 id="teamOneStatus"></h2>
+            </div>
+        </div>
+        
+        <div>
+            <!-- Icon Team2  -->
+            <div class="rightimage" >
+                <img src="" alt="Team2Icon" id="rightImage">
+            </div>
+            <!-- team Two Name -->
+
+            <div class="information">
+                <h1 id="h13"></h1>
+            </div>
+            <!-- BAtting/Bowling Status -->
+
+            <div class="batOrField">
+                <h2 id="teamTwoStatus"></h2>
+            </div>
+        </div>
+    </div>
+    <!-- First innings score -->
+            <div class="firstInningScore">
+                <h2 id="innOneScore"></h2>
+                <div class="sub">
+                    <h2 id="innOneRuns"></h2>
+                    <h2 id="innOneWickets"></h2>
+                </div>
+
+            </div>
+            <!-- Scoreboard Start -->
+                <div class="scorediv">
+                    <div class="information">
+                        <h1 id="h12"></h1>
+                    </div>
+                    <div class="middle">
+                        <div class="runswicket">
+                            <h1 id="runs"></h1>
+                            <h1 id="slash"></h1>
+                            <h1 id="wicket"></h1>
+                        </div>
+                        <div class="totalovers">
+                            <h2 id="textOvers"></h2>
+                            <h2 id="overs"></h2>
+                            <h2 id="dot"></h2>
+                            <h2 id="balls"></h2>
+                        </div>
+                        <div class="runRate">
+                            <h2 id="rr"></h2>
+                        </div>
+                        <div class="target">
+                            <h2 id="targetruns"></h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- Scoreboard Ends -->
+                <!-- Timeline  -->
+            <div class="timeline">
+                <h3 id="thisOver"></h3>
+                <h3 id="timelineOvers"> </h3>
+            </div>
+            <!-- Timeline -->
+    <div id="btn">
+        <div class="scoringButtons">
+            <label>
+                <div class="first">
+                    
+                     <!-- 0 BUTTON -->
+                        <input type="submit" value="0" disabled id="zeroButton">
+                    <!-- WICKET BUTTON -->
+                        <input type="submit" id="wicketButton" disabled value="Wicket">
+                    <!-- BYE BUTTON -->
+                        <input type="submit" id="byeButton" disabled value="Bye">
+                    <!-- LEGBYE BUTTON -->
+                        <input type="submit" disabled value="LegBye" id="legbyeButton">
+                </div>
+
+                <div class="second">
+                   
+                    <!-- 1 BUTTON -->
+                        <input type="submit" value="1" disabled id="oneButton">
+                    <!-- 2 BUTTON -->
+                        <input type="submit" value="2" disabled id="twoButton">
+                    <!-- 3 BUTTON -->
+                        <input type="submit" value="3" disabled id="threeButton">
+                    <!-- WIDE BUTTON -->
+                        <input type="submit" value="Wide" disabled id="wideButton">
+                </div>
+
+                <div class="third">
+                    
+                    <!-- 4 BUTTON -->
+                        <input type="submit" value="4" disabled id="fourButton">
+                    <!-- 5 BUTTON -->
+                        <input type="submit" value="5" disabled id="fiveButton">
+                    <!-- 6 BUTTON -->
+                        <input type="submit" value="6" disabled id="sixButton">
+                    <!-- NO-BALL BUTTON -->
+                        <input type="submit" disabled value="No-Ball" id="noballButton">
+                </div>
+
+                <div class="fourth">
+                    <!-- 7 BUTTON -->
+                       <input type="submit" value="7" disabled id="sevenButton">
+                   <!-- Declare BUTTON -->
+                       <input type="submit" id="declare" disabled value="Declare">
+                   <!-- Undo BUTTON -->
+                       <input type="submit" id="undoButton" disabled value="Undo">
+                   <!-- Start BUTTON -->
+                       <input type="submit"  value="Start" id="startButton">
+               </div>
+            </label>
+        </div>
+
+    </div>
+</body>
+</html>
