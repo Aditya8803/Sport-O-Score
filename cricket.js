@@ -11,7 +11,7 @@ let timelinePrev= []
 let ballatNoball=0;
 let teamOneBat=0;
 let teamTwoBat=0;
-let icons=['./images/Image0.jpg','./images/Image1.jpg','./images/Image2.jpg','./images/Image3.jpg','./images/Image4.jpg','./images/Image5.jpg'];
+let icons=['Image0.jpg','Image1.jpg','Image2.jpg','Image3.jpg','Image4.jpg','Image5.jpg'];
 let icon1;
 let icon2;
 document.addEventListener('DOMContentLoaded',()=>{
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded',()=>{
 }) 
 const showRuns = (e) =>{
     e.preventDefault();
-    //Initiating the values by innerHTML
+    Initiating the values by innerHTML
     numberBalls=0;
     numberOvers=0;
     numberWicket=0;
@@ -96,7 +96,7 @@ const showRuns = (e) =>{
     document.getElementById('h12').innerHTML="Score";
     document.getElementById('rr').innerHTML = "RunRate = "+ 0;
     document.getElementById('runs').innerHTML = numberRuns;
-    document.getElementById('slash').innerHTML = "/";  
+    document.getElementById('slash').innerHTML = "";  
     document.getElementById('wicket').innerHTML = numberWicket;     
     document.getElementById('overs').innerHTML = numberOvers;
     document.getElementById('dot').innerHTML = ".";
@@ -107,7 +107,7 @@ const showRuns = (e) =>{
     document.getElementById('startButton').style.display = "none";
 }
 
-    //ENABLING THE DISABLED BUTTON
+    ENABLING THE DISABLED BUTTON
 const enable =() =>{
         document.getElementById('wicketButton').disabled = false
         document.getElementById('zeroButton').disabled = false
@@ -124,7 +124,7 @@ const enable =() =>{
         document.getElementById('undoButton').disabled = false
         document.getElementById('sevenButton').disabled = false
     }
-//WHEN A WICKET FALLS INCREMENT BY 1
+WHEN A WICKET FALLS INCREMENT BY 1
 const wicketFall = () =>{
     enable();
     numberWicket++;
@@ -134,10 +134,10 @@ const wicketFall = () =>{
     document.getElementById('wicket').innerHTML = numberWicket;
     timeline.push("W");
     completeOvers();
-    // checkTarget();
+     checkTarget();
 }    
 }
-//0,1,2,3,4,5,6
+0,1,2,3,4,5,6
 const updateRuns = (a) =>{
     enable();
     numberRuns = numberRuns + a;
@@ -148,7 +148,7 @@ const updateRuns = (a) =>{
 
 }
 
-//WHEN A WIDE BALL IS BOWLED INCREASE RUN BY 1 BUT NOT BALL
+WHEN A WIDE BALL IS BOWLED INCREASE RUN BY 1 BUT NOT BALL
 const wideScored = () => {
     enable();
     document.getElementById('wideButton').disabled = true
@@ -162,7 +162,7 @@ const wideScored = () => {
     numberBalls=numberBalls-1
     document.getElementById('runs').innerHTML = numberRuns; 
 }
-//WHEN A BYE IS SCORED
+WHEN A BYE IS SCORED
 const byeScored = () =>{
     enable();
     document.getElementById('zeroButton').disabled = true
@@ -175,7 +175,7 @@ const byeScored = () =>{
     document.getElementById('declare').disabled = true
     timeline.push("B");
 }
-//WHEN LEGBYE SCORED
+WHEN LEGBYE SCORED
 const legbyeScored = () =>{
     enable();
     document.getElementById('zeroButton').disabled = true
@@ -189,7 +189,7 @@ const legbyeScored = () =>{
     timeline.push("Lb");
 
 }
-//WHEN A NO BALL IS BOWLED
+WHEN A NO BALL IS BOWLED
 const noBall = () =>{
     enable();
     ballatNoball = numberBalls;
@@ -205,7 +205,7 @@ const noBall = () =>{
     document.getElementById('runs').innerHTML = numberRuns;
     numberBalls=numberBalls-1;
 }
-//EndInnings Buttons
+EndInnings Buttons
 const endInnings = () =>{
     enable();
     document.getElementById('innOneScore').innerHTML = "Innings 1 Score";
@@ -316,12 +316,12 @@ else{
     timelineUpdate();
     completeOvers();
 }
-//Timeline Updation
+Timeline Updation
 const timelineUpdate=()=>{
     let timelineOvers = document.getElementById("timelineOvers");
     timelineOvers.innerHTML=timeline.join(' ');
 }
-//Complete Over Function with overs and balls
+Complete Over Function with overs and balls
  const completeOvers = () =>{
     document.getElementById('runs').innerHTML = numberRuns;
     if(ballatNoball === numberBalls - 1){
@@ -346,7 +346,7 @@ const timelineUpdate=()=>{
         document.getElementById('rr').innerHTML = "RunRate = "+0
     }
     else{
-        document.getElementById('rr').innerHTML = "RunRate = "+(numberRuns/(numberOvers*6+numberBalls)*6).toFixed(1);
+        document.getElementById('rr').innerHTML = "RunRate = "+(numberRuns(numberOvers*6+numberBalls)*6).toFixed(1);
 }
     if((numberOvers === maxOvers && target === 0 )||(numberWicket ===10 && target===0)){
         endInnings();
@@ -355,7 +355,7 @@ const timelineUpdate=()=>{
         checkTarget();
     }
 }
-//Target Function
+Target Function
 const checkTarget = ()=>{
     if(target!=0){
         if(teamOneBat === 1){
@@ -427,7 +427,7 @@ const checkTarget = ()=>{
     }
     }
 }
-//Redirection To Welcomwe Page
+Redirection To Welcomwe Page
 const goToWelcome =() =>{
     alert("You are being redirected to welcome page.All Information would be lost");
     window.location.replace("index.html")
