@@ -50,14 +50,6 @@ function pageCreation() {
     inner.appendChild(right);
 
     body.appendChild(inner);
-
-    // Timer
-    // const timer = createElement('div', 'timer', '');
-    // timer.appendChild(createElement('h1', 'timerText','timerText' ,'Time Left:',{textAlign:"center"}));
-    // timer.appendChild(createElement('h2', 'timeLeft', 'timeLeft','',{}));
-    // body.appendChild(timer);
-
-    // Buttons
     let matchTimer;
     if(currentSport!="Badminton" && currentSport!="Volleyball"){
     matchTimer = createElement('div','matchTimer','matchTimer','',{})
@@ -128,6 +120,8 @@ function pageCreation() {
 
     // Left point button
     let leftpointButton,rightpointButton;
+    let lonepointbutton,ltwopointbutton,lthreepointbutton;
+    let ronepointbutton,rtwopointbutton,rthreepointbutton;
     if(currentSport=="Badminton"||currentSport=="Volleyball"){
          leftpointButton = createInput('submit', '1 Point', 'leftpoint');
         Object.assign(leftpointButton.style, {
@@ -140,7 +134,53 @@ function pageCreation() {
             color:"white",
             display:"none"
         });
-    }else{
+        point.appendChild(createElement('div', 'leftpoint','').appendChild(leftpointButton));
+    }
+    else if(currentSport=="Basketball"){
+        const leftHandSide = createElement('div','leftHandSide','','',{display:"flex",justifyContent:"space-between"});
+        lonepointbutton = createInput('submit', '1', 'lonePoint');
+        Object.assign(lonepointbutton.style, {
+            margin: '4px',
+            fontSize: 'xx-large',
+            padding: '15px',
+            borderRadius: '20%',
+            border: '2px solid beige',
+            backgroundColor: '#000',
+            color:"White",
+            display:"none",
+            width:"33%",
+        });
+        leftHandSide.appendChild(lonepointbutton);
+        ltwopointbutton = createInput('submit', '2', 'ltwoPoint');
+        Object.assign(ltwopointbutton.style, {
+            margin: '4px',
+            fontSize: 'xx-large',
+            padding: '15px',
+            borderRadius: '20%',
+            border: '2px solid beige',
+            backgroundColor: '#000',
+            color:"White",
+            display:"none",
+            width:"33%",
+        });
+        leftHandSide.appendChild(ltwopointbutton);
+    
+        lthreepointbutton = createInput('submit', '3', 'lthreePoint');
+        Object.assign(lthreepointbutton.style, {
+            margin: '4px',
+            fontSize: 'xx-large',
+            padding: '15px',
+            borderRadius: '20%',
+            border: '2px solid beige',
+            backgroundColor: '#000',
+            color:"White",
+            display:"none",
+            width:"33%",
+        });
+        leftHandSide.appendChild(lthreepointbutton);
+        point.appendChild(leftHandSide);
+    }
+    else{
          leftpointButton = createInput('submit', 'Goal!!', 'leftpoint');
         Object.assign(leftpointButton.style, {
             margin: '10px',
@@ -152,9 +192,10 @@ function pageCreation() {
             color:"white",
             display:"none"
         });
+        point.appendChild(createElement('div', 'leftpoint','').appendChild(leftpointButton));
     }
   
-    point.appendChild(createElement('div', 'leftpoint','').appendChild(leftpointButton));
+
 
     // Right point button
     if(currentSport=="Badminton"||currentSport=="Volleyball"){
@@ -169,7 +210,53 @@ function pageCreation() {
         color:"White",
         display:"none"
     });
-}else{
+    point.appendChild(createElement('div', 'rightpoint', '').appendChild(rightpointButton));
+}
+else if(currentSport=="Basketball"){
+    const rightHandSide = createElement('div','rightHandSide','','',{display:"flex",justifyContent:"space-between"});
+    ronepointbutton = createInput('submit', '1', 'ronePoint');
+    Object.assign(ronepointbutton.style, {
+        margin: '4px',
+        fontSize: 'xx-large',
+        padding: '15px',
+        borderRadius: '20%',
+        border: '2px solid beige',
+        backgroundColor: '#000',
+        color:"White",
+        display:"none",
+        width:"33%",
+    });
+    rightHandSide.appendChild(ronepointbutton);
+    rtwopointbutton = createInput('submit', '2', 'rtwoPoint');
+    Object.assign(rtwopointbutton.style, {
+        margin: '4px',
+        fontSize: 'xx-large',
+        padding: '15px',
+        borderRadius: '20%',
+        border: '2px solid beige',
+        backgroundColor: '#000',
+        color:"White",
+        display:"none",
+        width:"33%",
+    });
+    rightHandSide.appendChild(rtwopointbutton);
+
+    rthreepointbutton = createInput('submit', '3', 'rthreePoint');
+    Object.assign(rthreepointbutton.style, {
+        margin: '4px',
+        fontSize: 'xx-large',
+        padding: '15px',
+        borderRadius: '20%',
+        border: '2px solid beige',
+        backgroundColor: '#000',
+        color:"White",
+        display:"none",
+        width:"33%",
+    });
+    rightHandSide.appendChild(rthreepointbutton);
+    point.appendChild(rightHandSide);
+}
+else{
     rightpointButton = createInput('submit', 'Goal!!', 'rightpoint');
     Object.assign(rightpointButton.style, {
         margin: '10px',
@@ -181,8 +268,9 @@ function pageCreation() {
         color:"White",
         display:"none"
     });
-}
     point.appendChild(createElement('div', 'rightpoint', '').appendChild(rightpointButton));
+
+}
     body.appendChild(point);
     
     const style = createElement('style', '', `
@@ -216,11 +304,26 @@ document.addEventListener("DOMContentLoaded",()=>{
     pageCreation();
     document.getElementById('leftImage').src = icons[icon1];
     document.getElementById('rightImage').src = icons[icon2];
-
+    if(currentSport!="Basketball"){
     let leftButton = document.getElementById('leftpoint')
     leftButton.addEventListener('click',()=>{updatePoint(teamOneScore+1,teamTwoScore)})
     let rightButton = document.getElementById('rightpoint')
     rightButton.addEventListener('click',()=>{updatePoint(teamOneScore,teamTwoScore+1)})
+}else{
+    let lonepointbutton = document.getElementById('lonePoint');
+    lonepointbutton.addEventListener('click',()=>{updatePoint(teamOneScore+1,teamTwoScore)})
+    let ltwopointbutton = document.getElementById('ltwoPoint');
+    ltwopointbutton.addEventListener('click',()=>{updatePoint(teamOneScore+2,teamTwoScore)})
+    let lthreepointbutton = document.getElementById('lthreePoint');
+    lthreepointbutton.addEventListener('click',()=>{updatePoint(teamOneScore+3,teamTwoScore)})
+
+    let ronepointbutton = document.getElementById('ronePoint');
+    ronepointbutton.addEventListener('click',()=>{updatePoint(teamOneScore,teamTwoScore+1)})
+    let rtwopointbutton = document.getElementById('rtwoPoint');
+    rtwopointbutton.addEventListener('click',()=>{updatePoint(teamOneScore,teamTwoScore+2)})
+    let rthreepointbutton = document.getElementById('rthreePoint');
+    rthreepointbutton.addEventListener('click',()=>{updatePoint(teamOneScore,teamTwoScore+3)})
+}
     if(currentSport=="Badminton" || currentSport=="Volleyball"){
     document.getElementById('matchLimit').textContent = "Match Point: " + matchLimit+"Points";
 }else{
@@ -246,8 +349,20 @@ function updateTimer() {
 }
 //Start Timer Function
 const startTimer=()=> {
+    if(currentSport!="Basketball"){
     document.getElementById('leftpoint').style.display = "block";
     document.getElementById('rightpoint').style.display = "block";
+}else{
+    document.getElementById('lonePoint').style.display = "block";
+    document.getElementById('ltwoPoint').style.display = "block";
+    document.getElementById('lthreePoint').style.display = "block";
+
+    document.getElementById('ronePoint').style.display = "block";
+    document.getElementById('rtwoPoint').style.display = "block";
+    document.getElementById('rthreePoint').style.display = "block";
+
+
+}
     if(currentSport=="Football"||currentSport=="Handball"||currentSport=="Basketball"||currentSport=="Hockey"){
     document.getElementById('quarterIndicator').style.display = "block"; 
 }
@@ -351,8 +466,18 @@ const resetAll=()=>{
     document.getElementById('rightpoint').style.display = "none";
     updatePoint(0,0);
 }
+if(currentSport!="Basketball"){
 document.getElementById('leftpoint').style.display = "none";
 document.getElementById('rightpoint').style.display = "none";
+}else{
+    document.getElementById('lonePoint').style.display = "none";
+    document.getElementById('ltwoPoint').style.display = "none";
+    document.getElementById('lthreePoint').style.display = "none";
+
+    document.getElementById('ronePoint').style.display = "none";
+    document.getElementById('rtwoPoint').style.display = "none";
+    document.getElementById('rthreePoint').style.display = "none";
+}
 document.getElementById('quarterIndicator').style.display = "none";
 }
 
