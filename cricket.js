@@ -95,7 +95,7 @@ const showRuns = (e) =>{
     document.getElementById('h12').innerHTML="Score";
     document.getElementById('rr').innerHTML = "RunRate = "+ 0;
     document.getElementById('runs').innerHTML = numberRuns;
-    document.getElementById('slash').innerHTML = "";  
+    document.getElementById('slash').innerHTML = "/";  
     document.getElementById('wicket').innerHTML = numberWicket;     
     document.getElementById('overs').innerHTML = numberOvers;
     document.getElementById('dot').innerHTML = ".";
@@ -123,6 +123,7 @@ const enable =() =>{
         document.getElementById('undoButton').disabled = false
         document.getElementById('sevenButton').disabled = false
     }
+
 const wicketFall = () =>{
     enable();
     numberWicket++;
@@ -132,10 +133,8 @@ const wicketFall = () =>{
     document.getElementById('wicket').innerHTML = numberWicket;
     timeline.push("W");
     completeOvers();
-     checkTarget();
 }    
 }
-
 const updateRuns = (a) =>{
     enable();
     numberRuns = numberRuns + a;
@@ -145,8 +144,6 @@ const updateRuns = (a) =>{
     document.getElementById('runs').innerHTML = numberRuns;
 
 }
-
-
 const wideScored = () => {
     enable();
     document.getElementById('wideButton').disabled = true
@@ -160,7 +157,6 @@ const wideScored = () => {
     numberBalls=numberBalls-1
     document.getElementById('runs').innerHTML = numberRuns; 
 }
-
 const byeScored = () =>{
     enable();
     document.getElementById('zeroButton').disabled = true
@@ -203,7 +199,6 @@ const noBall = () =>{
     document.getElementById('runs').innerHTML = numberRuns;
     numberBalls=numberBalls-1;
 }
-
 const endInnings = () =>{
     enable();
     document.getElementById('innOneScore').innerHTML = "Innings 1 Score";
@@ -319,7 +314,6 @@ const timelineUpdate=()=>{
     let timelineOvers = document.getElementById("timelineOvers");
     timelineOvers.innerHTML=timeline.join(' ');
 }
-
  const completeOvers = () =>{
     document.getElementById('runs').innerHTML = numberRuns;
     if(ballatNoball === numberBalls - 1){
@@ -344,7 +338,7 @@ const timelineUpdate=()=>{
         document.getElementById('rr').innerHTML = "RunRate = "+0
     }
     else{
-        document.getElementById('rr').innerHTML = "RunRate = "+(numberRuns(numberOvers*6+numberBalls)*6).toFixed(1);
+        document.getElementById('rr').innerHTML = "RunRate = "+(numberRuns/(numberOvers*6+numberBalls)*6).toFixed(1);
 }
     if((numberOvers === maxOvers && target === 0 )||(numberWicket ===10 && target===0)){
         endInnings();
@@ -353,7 +347,6 @@ const timelineUpdate=()=>{
         checkTarget();
     }
 }
-
 const checkTarget = ()=>{
     if(target!=0){
         if(teamOneBat === 1){
@@ -425,7 +418,6 @@ const checkTarget = ()=>{
     }
     }
 }
-
 const goToWelcome =() =>{
     alert("You are being redirected to welcome page.All Information would be lost");
     window.location.replace("index.html")
