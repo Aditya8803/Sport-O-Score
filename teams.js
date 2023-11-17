@@ -7,44 +7,44 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.getElementById("matchSetup").innerHTML = currentSport
     if(currentSport=="Football"){
         dropdown.innerHTML = 
-       `<option value="30">Match Time:30</option>
-        <option value="60">Match Time:60</option>
-        <option value="90">Match Time:90</option>
+       `<option value="30">Match Time:30 Min</option>
+        <option value="60">Match Time:60 Min</option>
+        <option value="90">Match Time:90 Min</option>
     `;
     }
     else if(currentSport =="Badminton"){
         dropdown.innerHTML = 
-       `<option value="11">Match Points:11</option>
-        <option value="15">Match Points:15</option>
-        <option value="21">Match Points:21</option>
+       `<option value="11">Match Points:11 Points</option>
+        <option value="15">Match Points:15 Points</option>
+        <option value="21">Match Points:21 Points</option>
     `;
     }
     else if(currentSport =="Hockey"){
         dropdown.innerHTML = 
-       `<option value="30">Match Time:3</option>
-        <option value="45">Match Time:45</option>
-        <option value="60">Match Time:60</option>
+       `<option value="30">Match Time:30 Min</option>
+        <option value="45">Match Time:45 Min</option>
+        <option value="60">Match Time:60 Min</option>
     `;
     }
     else if(currentSport =="Basketball"){
         dropdown.innerHTML = 
-       `<option value="32">Match Time:32</option>
-        <option value="40">Match Time:40</option>
-        <option value="48">Match Time:48</option>
+       `<option value="32">Match Time:32 Min</option>
+        <option value="40">Match Time:40 Min</option>
+        <option value="48">Match Time:48 Min</option>
     `;
     }
     else if(currentSport =="Handball"){
         dropdown.innerHTML = 
-       `<option value="20">Match Time:20</option>
-        <option value="40">Match Time:40</option>
-        <option value="60">Match Time:60</option>
+       `<option value="20">Match Time:20 Min</option>
+        <option value="40">Match Time:40 Min</option>
+        <option value="60">Match Time:60 Min</option>
     `;
     }
     else if(currentSport =="Volleyball"){
         dropdown.innerHTML = 
-       `<option value="15">Match Points:15</option>
-        <option value="21">Match Points:21</option>
-        <option value="25">Match Points:25</option>
+       `<option value="15">Match Points:15 Points</option>
+        <option value="21">Match Points:21 Points</option>
+        <option value="25">Match Points:25 Points</option>
     `;
     }
     else{
